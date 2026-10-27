@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agendar consulta — UniFio Apoio Psicológico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <section aria-label="Agendamento" class="d-flex flex-column min-vh-100">
+      <!-- Cabeçalho -->
+      <header class="navbar-custom sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a href="index.html" class="brand-logo">
+            <i class="bi bi-heart-pulse-fill"></i>
+            UniFio
+            <span class="brand-divider d-none d-sm-inline">Apoio psicológico</span>
+          </a>
+          <nav class="d-flex align-items-center gap-3 gap-md-4">
+            <a href="agendamento.html" aria-current="page" class="text-primary fw-semibold text-decoration-none small">Agendar consulta</a>
+            <a href="consulta-marcada.html" class="text-secondary text-decoration-none small">Minhas consultas</a>
+            <a href="#duvidas" class="text-secondary text-decoration-none small d-none d-md-inline">Dúvidas</a>
+            <a class="pill btn btn-light border btn-sm rounded-pill px-3 fw-semibold" href="#">Área do aluno · Sair</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container py-4">
+        <!-- Cabeçalho da Página e Etapas -->
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <span class="badge-step d-inline-block mb-2">Passo 02 · Agendamento</span>
+            <h1 class="h3 fw-bold mb-1">Vamos encontrar um momento para conversar?</h1>
+            <p class="text-secondary small mb-0">Selecione o profissional à esquerda e escolha o dia e horário à direita.</p>
+          </div>
+          <div class="stepper">
+            <div class="step-item active"><span class="step-dot">1</span>Profissional</div>
+            <div class="step-item active"><span class="step-dot">2</span>Data e Hora</div>
+            <div class="step-item"><span class="step-dot">3</span>Confirmação</div>
+          </div>
+        </div>
+
+        <!-- Grade Principal de Seleção -->
+        <div class="row g-4">
+          <!-- Coluna 1: Profissionais -->
+          <div class="col-lg-5">
+            <div class="surface-card p-4 h-100">
+              <h2 class="h6 fw-bold mb-1">1. Escolha o profissional</h2>
+              <p class="text-secondary small mb-3">Profissionais de psicologia vinculados à UniFio</p>
+
+              <div class="pro sel">
+                <div class="av">AM</div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Psicóloga Ana Martins</h3>
+                  <small class="text-secondary">Atendimento Online · 4 horários livres</small>
+                </div>
+                <div class="radio"></div>
+              </div>
+
+              <div class="pro">
+                <div class="av">RC</div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Psicólogo Rafael Costa</h3>
+                  <small class="text-secondary">Atendimento Online · Terapia Cognitiva</small>
+                </div>
+                <div class="radio"></div>
+              </div>
+
+              <div class="pro mb-0">
+                <div class="av">BL</div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0">Psicóloga Beatriz Lima</h3>
+                  <small class="text-secondary">Atendimento Online · Rotina Acadêmica</small>
+                </div>
+                <div class="radio"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Datas e Horários -->
+          <div class="col-lg-7">
+            <div class="surface-card p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h2 class="h6 fw-bold mb-0">2. Escolha a data e o horário</h2>
+                  <span class="badge bg-light text-secondary border">Outubro de 2026</span>
+                </div>
+                <p id="sub-profissional" class="text-secondary small mb-3">
+                  Disponibilidade de Ana Martins · Modalidade online
+                </p>
+
+                <label class="small fw-semibold text-secondary mb-2">Dia da semana</label>
+                <div class="days mb-4" role="group" aria-label="Datas">
+                  <button type="button" class="slot" aria-pressed="false"><small>Seg</small><b>19</b></button>
+                  <button type="button" class="slot" aria-pressed="true"><small>Ter</small><b>20</b></button>
+                  <button type="button" class="slot" aria-pressed="false"><small>Qua</small><b>21</b></button>
+                  <button type="button" class="slot" aria-pressed="false"><small>Qui</small><b>22</b></button>
+                  <button type="button" class="slot" aria-pressed="false"><small>Sex</small><b>23</b></button>
+                </div>
+
+                <label id="label-dia-escolhido" class="small fw-semibold text-secondary mb-2">
+                  Terça-feira, 20 de outubro · horários disponíveis
+                </label>
+                <div class="times" role="group" aria-label="Horários">
+                  <button type="button" class="slot" aria-pressed="false">09h</button>
+                  <button type="button" class="slot" aria-pressed="false">10h</button>
+                  <button type="button" class="slot" aria-pressed="true">✓ 14h</button>
+                  <button type="button" class="slot" aria-pressed="false">15h</button>
+                </div>
+              </div>
+
+              <!-- Resumo de Confirmação Integrado -->
+              <div class="confirm mt-4 p-3 rounded-3 border bg-primary-subtle border-primary-subtle d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div>
+                  <span class="small text-primary fw-semibold d-block">Resumo da sua escolha:</span>
+                  <strong id="resumo-confirmacao" class="fs-6 text-dark">Ana Martins · Ter, 20/10/2026 · 14h · Online</strong>
+                </div>
+                <a class="btn btn-unifio" href="consulta-marcada.html">
+                  Confirmar agendamento <i class="bi bi-check2-circle ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dúvidas Frequentes -->
+        <section id="duvidas" class="mt-5 pt-4 border-top">
+          <h2 class="h5 fw-bold mb-3">Dúvidas frequentes</h2>
+          <div class="row g-3">
+            <div class="col-md-3 col-sm-6">
+              <div class="surface-card p-3 h-100">
+                <h3 class="h6 fw-bold"><i class="bi bi-cash-coin text-primary me-1"></i>Tem custo?</h3>
+                <p class="text-secondary small mb-0">Não. O atendimento é 100% gratuito para alunos da UniFio.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="surface-card p-3 h-100">
+                <h3 class="h6 fw-bold"><i class="bi bi-shield-lock text-primary me-1"></i>É sigiloso?</h3>
+                <p class="text-secondary small mb-0">Sim. Todas as conversas seguem o sigilo ético da Psicologia.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="surface-card p-3 h-100">
+                <h3 class="h6 fw-bold"><i class="bi bi-chat-dots text-primary me-1"></i>O que falar?</h3>
+                <p class="text-secondary small mb-0">Ansiedade, rotina de estudos, relações ou questões pessoais.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="surface-card p-3 h-100">
+                <h3 class="h6 fw-bold"><i class="bi bi-calendar-x text-primary me-1"></i>Remarcação</h3>
+                <p class="text-secondary small mb-0">Consulte seus horários em "Minhas consultas" no menu superior.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span><strong>UniFio</strong> · Sistema de Apoio Psicológico ao Aluno</span>
+          <span>Não substitui atendimento médico de urgência.</span>
+        </div>
+      </footer>
+    </section>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
